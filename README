@@ -1,0 +1,25 @@
+***
+Novelys Antispam
+***
+
+This is a very simple antispam technique that uses honeypots to try detect bad bots.
+
+In your main stylesheet add :
+
+.n_a_s {
+  position: absolute; left: -2000px;
+}
+
+Just add in your form :
+
+<%= novelys_antispam_honeypots %>
+
+Before creating/saving your model, add this in your controller :
+
+if NovelysAntispam.valid?(params)
+  # ...
+end
+
+This is really just the beginning, feel free to enhance !
+
+Copyright (c) 2009 Novelys.
